@@ -32,6 +32,14 @@ ba.beerPage("/beer/profile/29223/84343/", function(beer) {
     console.log(beer);
 
 });
+
+// Get a specific beer's reviews from top reviewers
+// http://beeradvocate.com/beer/profile/29223/84343/?view=beer&sort=topr&start=0
+ba.beerTopReviews("/beer/profile/29223/84343/", 1, function(reviews) {
+
+    console.log(reviews);
+
+});
 ```
 ## Output
 
@@ -65,6 +73,28 @@ ba.beerPage("/beer/profile/29223/84343/", function(beer) {
     reviews: '65',
     rAvg: '4.04',
     pDev: '10.4%' } ]
+	
+// Get a specific beer's reviews from top reviewers
+[{
+    reviewer: 'Sammy',
+    reviewer_url: '/community/members/sammy.3853/',
+    rating: '3.95',
+    rating_max: '5',
+    attributes: {
+        look: '4',
+        smell: '4',
+        taste: '4',
+        feel: '3.5',
+        overall: '4'
+    },
+    review_text: 'Very fresh and good can obtained by John. Citrus hop aroma, 
+				yet well tamed. Cloudy orange and lacey. A big IBU and yet a 
+				very good ornage, tangerine, grapefruit taste and drinkability. 
+				A good examle of a pale that used tobe called an IPA(if not a 
+				DIPA by some) .Recommended.',
+    serving_type: 'can',
+    date: '11-28-2012 04:40:39'
+}]
 ```
 
 
