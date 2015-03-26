@@ -107,29 +107,30 @@ exports.beerPage = function(url, callback) {
                 bros_rating = bros_info.next().next().text();
 
             // More stats
-            var stats = $('#ba-content table').eq(2).find('td:last-child').text().split(/:\s/),
-                ratings = stats[1].replace("Reviews",""),
+            var stats = $('#ba-content table').eq(2).find('td:last-child').text().split(/:\s/);
+console.log(stats);
+                var ratings = stats[1].replace("Reviews",""),
                 reviews = stats[2].replace("rAvg",""),
                 rAvg = stats[3].replace("\npDev",""),
-                pDev = stats[4].replace("\n\nRatings Help\n","");
+                pDev = stats[4].replace("\nWants","");
 
 
             // Data to return
             var data = {
-                beer_name: beer_name,
-                beer_style: beer_style,
-                beer_abv: beer_abv,
-                brewery_name: brewery_name,
-                brewery_state: brewery_state,
-                brewery_country: brewery_country,
-                ba_score: ba_score,
-                ba_rating: ba_rating,
-                bros_score: bros_score,
-                bros_rating: bros_rating,
-                ratings: ratings,
-                reviews: reviews,
-                rAvg: rAvg,
-                pDev: pDev
+                beer_name: beer_name.trim(),
+                beer_style: beer_style.trim(),
+                beer_abv: beer_abv.trim(),
+                brewery_name: brewery_name.trim(),
+                brewery_state: brewery_state.trim(),
+                brewery_country: brewery_country.trim(),
+                ba_score: ba_score.trim(),
+                ba_rating: ba_rating.trim(),
+                bros_score: bros_score.trim(),
+                bros_rating: bros_rating.trim(),
+                ratings: ratings.trim(),
+                reviews: reviews.trim(),
+                rAvg: rAvg.trim(),
+                pDev: pDev.trim()
             };
 
             // Add to beer array
