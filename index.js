@@ -108,7 +108,6 @@ exports.beerPage = function(url, callback) {
 
             // More stats
             var stats = $('#ba-content table').eq(2).find('td:last-child').text().split(/:\s/);
-console.log(stats);
                 var ratings = stats[1].replace("Reviews",""),
                 reviews = stats[2].replace("rAvg",""),
                 rAvg = stats[3].replace("\npDev",""),
