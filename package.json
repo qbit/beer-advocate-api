@@ -1,6 +1,6 @@
 {
   "name": "beer-advocate-api",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Unofficial library for working with Beer Advocate data.",
   "main": "index.js",
   "scripts": {
@@ -13,9 +13,9 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/stursby/beer-advocate-api.git"
+    "url": "https://github.com/qbit/beer-advocate-api.git"
   },
-  "author": "Charlie Hield",
+  "author": "Aaron Bieber",
   "license": "MIT",
   "dependencies": {
     "cheerio": "~0.13.0",
