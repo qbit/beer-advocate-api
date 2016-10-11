@@ -18,7 +18,7 @@
   "author": "Aaron Bieber",
   "license": "MIT",
   "dependencies": {
-    "cheerio": "~0.13.0",
-    "request": "~2.30.0"
+    "cheerio": "^0.22.0",
+    "request": "^2.75.0"
   }
 }
