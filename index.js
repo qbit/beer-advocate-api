@@ -82,19 +82,18 @@ exports.beerPage = function(url, callback) {
             var beer = [];
 
             // Beer & brewery name
-            var title = $('h1').text().split(/\s|\s/),
+            var title = $('h1').text().split(/\s\|\s/),
                 beer_name = title[0],
-                brewery_name = title[1];
+                brewery_name = $($('#ba-content div div a')[3]).text();
 
             // ABV
-            var beer_abv_chunk = $('#ba-content table').eq(1).find('td').text().split(/%\sABV/)[0],
-                beer_abv = beer_abv_chunk.substr(beer_abv_chunk.length - 6).trimLeft() + "%";
+            var beer_abv = $($('#ba-content div div')[4]).text().split(":")[3].split("\n")[0].replace('\s', '', 'g');
 
             // Brewery details
             var links = $('#ba-content table').find('form').parent().find('a'),
-                brewery_state = links.eq(2).text(),
-                brewery_country = links.eq(3).text(),
-                beer_style = links.eq(4).text();
+                brewery_state = $($('#ba-content div div a')[4]).text(),
+                brewery_country = $($('#ba-content div div a')[5]).text(),
+                beer_style = $($('#ba-content div div a b')[3]).text();
 
             // Beer Advocate scores
             var ba_info = $('.BAscore_big').eq(0),
