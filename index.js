@@ -84,10 +84,15 @@ exports.beerPage = function(url, callback) {
             // Beer & brewery name
             var title = $('h1').text().split(/\s\|\s/),
                 beer_name = title[0],
-                brewery_name = $($('#ba-content div div a')[3]).text();
+                brewery_name = title[1];
 
             // ABV
-            var beer_abv = $($('#ba-content div div')[4]).text().split(":")[3].split("\n")[0].replace('\s', '', 'g');
+            var beer_abv = "";
+            try {
+                beer_abv = $($('#info_box').text().split(":")[3].split("\n")[0].replace('\s', '', 'g'));
+            } catch(e) {
+              beer_abv = "-";
+            }
 
             // Brewery details
             var links = $('#ba-content table').find('form').parent().find('a'),
